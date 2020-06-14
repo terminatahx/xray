@@ -1,0 +1,11 @@
+- name: vcenter login
+  uri:
+    url: "https://{{secret.hostname}}/rest/com/vmware/cis/session"
+    force_basic_auth: yes
+    method: POST
+    user: "{{secret.username}}"
+    password: "{{secret.password}}"
+    status_code: 200
+    validate_certs: no
+  register: login
+    
